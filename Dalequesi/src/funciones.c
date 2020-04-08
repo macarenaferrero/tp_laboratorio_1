@@ -1,4 +1,5 @@
-
+#include <stdio.h>
+#include <stdlib.h>
 
 int promediarNumeros(int operador1,int operador2)
 {
