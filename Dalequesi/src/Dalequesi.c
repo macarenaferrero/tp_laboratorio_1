@@ -25,7 +25,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+<<<<<<< HEAD
 #include "utn.h"
+=======
+#include "funciones.h"
+>>>>>>> 3d3680727b04bc0a3e3c2ffe17063babc1ad1a2c
 
 int main(void){
 
@@ -42,6 +46,7 @@ int main(void){
 
 	do
 	{
+<<<<<<< HEAD
 		numeroUno = utn_getInt(&numeroUno,"Ingrese un numero: [-100 al 100]", "Valor incorrecto. Ingrese un numero: [-100 al 100]", -100, 100, 3);
 		if(numeroUno == 0)
 
@@ -58,6 +63,10 @@ int main(void){
 			printf("ERROR");
 
 		}
+=======
+		numeroUno = getInt("Ingrese un numero: [-100 al 100]", "Valor incorrecto. Ingrese un numero: [-100 al 100]", -100, 100);
+
+>>>>>>> 3d3680727b04bc0a3e3c2ffe17063babc1ad1a2c
 		valorPositivo = esPositivo(numeroUno);
 
 		if(valorPositivo==1)
