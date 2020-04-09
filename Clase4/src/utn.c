@@ -15,59 +15,60 @@ int utn_getInt (int* pResultado, char* mensaje, char* mError, int min, int max, 
 	int retorno = -1;
 
 	if(pResultado != NULL && mensaje != NULL && mError != NULL && min <= max && reintentos >= 0)
+	{
+		do
 		{
-		do{
 
 			printf("%s", mensaje);
 			scanf("%d", &bufferInt);
 
 			if(bufferInt >= min && bufferInt <= max)
 			{
-			*pResultado = bufferInt;
-			retorno = 0;
-			break;
+					*pResultado = bufferInt;
+					retorno = 0;
+					break;
 			}
-
 			else
 			{
-			printf("s%", mError);
-			reintentos--;
+					__fpurge(stdin);
+					printf("s%", mError);
+					reintentos--;
 			}
 		}while(reintentos>=0);
-		}
+	}
 			return retorno;
-		}
+}
 
 
 float utn_getFloat (float* pResultado, char* mensaje, char* mError, float min, float max, int reintentos)
 {
-	int bufferFloat;
+	float bufferFloat;
 	int retorno = -1;
 
 	if(pResultado != NULL && mensaje != NULL && mError != NULL && min <= max && reintentos >= 0)
+	{
+		do
 		{
-		do{
 
 			printf("%s", mensaje);
-			__fpurge(stdin);
-			scanf("%d", &bufferFloat);
+			scanf("%f", &bufferFloat);
 
 			if(bufferFloat >= min && bufferFloat <= max)
 			{
-			*pResultado = bufferFloat;
-			retorno = 0;
-			break;
+					*pResultado = bufferFloat;
+					retorno = 0;
+					break;
 			}
-
 			else
 			{
-			printf("s%", mError);
-			reintentos--;
+					__fpurge(stdin);
+					printf("s%", mError);
+					reintentos--;
 			}
 		}while(reintentos>=0);
-		}
+	}
 			return retorno;
-		}
+}
 
 
 
@@ -79,25 +80,28 @@ char utn_getChar (char* pResultado, char* mensaje, char* mError, char min, char 
 	int retorno = -1;
 
 	if(pResultado != NULL && mensaje != NULL && mError != NULL && min <= max && reintentos >= 0)
+	{
+		do
 		{
-		do{
 
 			printf("%s", mensaje);
+			__fpurge(stdin);
 			scanf("%c", &bufferChar);
 
 			if(bufferChar >= min && bufferChar <= max)
 			{
-			*pResultado = bufferChar;
-			retorno = 0;
-			break;
+					*pResultado = bufferChar;
+					retorno = 0;
+					break;
 			}
 
 			else
 			{
-			printf("s%", mError);
-			reintentos--;
+					__fpurge(stdin);
+					printf("s%", mError);
+					reintentos--;
 			}
 		}while(reintentos>=0);
-		}
+	}
 			return retorno;
-		}
+}

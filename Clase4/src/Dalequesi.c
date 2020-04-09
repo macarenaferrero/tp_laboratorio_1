@@ -8,48 +8,49 @@
  ============================================================================
 */
 
-#include <stdio.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include "utn.h"
 
 int main(void)
 {
+	setbuf(stdout, NULL);
+
 	int edad;
-	int peso;
+	float peso;
 	int respuesta;
 	char letra;
 
-	respuesta = utn_getChar(&letra,"\nLetra?","\nError la letra debe ser desde A a J\n",'A','J',1);
+
+	respuesta = utn_getChar(&letra,"\nCual es la letra?","Error. La letra debe ser desde A a J\n",'A','J',2);
 		if(respuesta == 0)
 		{
-			printf("\nLa letra es: %c",letra);
+			printf("\nLa letra es: %c\n",letra);
 		}
 		else
 		{
-			printf("ERROR");
+			printf("\nERROR");
 		}
 
-	respuesta = utn_getInt(&edad,"\nEdad?","\nError la edad debe ser desde 0 a 199",0,199,2);
+	respuesta = utn_getInt(&edad,"\nCual es la edad?","Error la edad debe ser desde 0 a 199\n",0,199,2);
 	if(respuesta == 0)
 	{
-		printf("La edad es: %d",edad);
+		printf("La edad es: %d\n",edad);
 	}
 	else
 	{
-		printf("ERROR");
+		printf("\nERROR");
 	}
 
-	respuesta = utn_getInt(&peso,"\nPeso?","\nError peso debe ser desde 0 a 500",0,500,3);
+	respuesta = utn_getFloat(&peso,"\nCual es el peso?","Error peso debe ser desde 0 a 500\n",0,500,3);
 	if(respuesta == 0)
 	{
-		printf("El peso es: %d",peso);
+		printf("El peso es: %f\n",peso);
 	}
 	else
 	{
-		printf("ERROR");
+		printf("\nERROR");
 	}
-
-
 
 
 	return EXIT_SUCCESS;
