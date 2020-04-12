@@ -31,7 +31,7 @@ int utn_getInt (int* pResultado, char* mensaje, char* mError, int min, int max, 
 			else
 			{
 					__fpurge(stdin);
-					printf("s%", mError);
+					printf("%s", mError);
 					reintentos--;
 			}
 		}while(reintentos>=0);
@@ -62,7 +62,7 @@ float utn_getFloat (float* pResultado, char* mensaje, char* mError, float min, f
 			else
 			{
 					__fpurge(stdin);
-					printf("s%", mError);
+					printf("%s", mError);
 					reintentos--;
 			}
 		}while(reintentos>=0);
@@ -98,10 +98,69 @@ char utn_getChar (char* pResultado, char* mensaje, char* mError, char min, char 
 			else
 			{
 					__fpurge(stdin);
-					printf("s%", mError);
+					printf("%s", mError);
 					reintentos--;
 			}
 		}while(reintentos>=0);
 	}
 			return retorno;
 }
+
+int utn_sumInt (int* pResultadoSuma, int valorA, int valorB)
+{
+	int resultadoSumar;
+	int retorno = -1;
+
+	if(pResultadoSuma != NULL && valorA != NULL && valorB != NULL)
+	{
+		resultadoSumar = valorA + valorB;
+		scanf("%d", &resultadoSumar);
+		*pResultadoSuma = resultadoSumar;
+		retorno = 0;
+	}
+			return retorno;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+int utn_promediarArray(float* pPromedioResultado, int array[], int len)
+{
+
+	int i;
+	int acumuladorSuma=0;
+	int retorno = -1;
+
+	if(pPromedioResultado != NULL && array != NULL && len > 0){
+		for (i=0; i<len; i++)
+		{
+			acumuladorSuma = acumuladorSuma + array[i];
+		}
+
+		//printf ("%d", suma);
+
+		*pPromedioResultado = (float)acumuladorSuma/len;
+		retorno = 0;
+		break;
+	}
+
+	return retorno;
+}
+
+int utn_sumar(int* resultadoSuma, int arrayNumeros[])
+{
+	int bufferInt;
+	int retorno = -1;
+
+
+
+}
+*/
