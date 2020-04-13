@@ -111,10 +111,9 @@ int utn_sumInt (int* pResultadoSuma, int valorA, int valorB)
 	int resultadoSumar;
 	int retorno = -1;
 
-	if(pResultadoSuma != NULL && valorA != NULL && valorB != NULL)
+	if(pResultadoSuma != NULL)
 	{
 		resultadoSumar = valorA + valorB;
-		scanf("%d", &resultadoSumar);
 		*pResultadoSuma = resultadoSumar;
 		retorno = 0;
 	}

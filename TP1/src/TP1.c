@@ -38,7 +38,7 @@ int main(void)
 		int opcion;
 		int valorA;
 		int valorB;
-		int resultadoSumar;
+		int resultadoSumar=0;
 
 		do
 		{
@@ -82,7 +82,8 @@ int main(void)
 					}
 					break;
 				case 4:
-						printf("La suma de A y B es : %d", resultadoSumar);
+						printf("La suma de A y B es : %d\n", resultadoSumar);
+						scanf("%d", &resultadoSumar);
 					break;
 				}
 			}
