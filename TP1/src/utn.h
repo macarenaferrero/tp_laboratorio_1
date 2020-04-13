@@ -13,6 +13,8 @@ float utn_getFloat (float* pResultado, char* mensaje, char* mError, float min, f
 char utn_getChar (char* pResultado, char* mensaje, char* mError, char min, char max, int reintentos);
 //int utn_promediarArray(float* pPromedioResultado, int array[], int len);
 int utn_sumInt (int* pResultadoSuma, int valorA, int valorB);
+int utn_restarInt (int* pResultadoResta, int valorA, int valorB);
+
 
 
 

@@ -120,6 +120,19 @@ int utn_sumInt (int* pResultadoSuma, int valorA, int valorB)
 			return retorno;
 }
 
+int utn_restarInt (int* pResultadoResta, int valorA, int valorB)
+{
+	int resultadoRestar;
+	int retorno = -1;
+
+	if(pResultadoResta != NULL)
+	{
+		resultadoRestar = valorA - valorB;
+		*pResultadoResta = resultadoRestar;
+		retorno = 0;
+	}
+			return retorno;
+}
 
 
 

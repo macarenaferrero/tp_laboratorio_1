@@ -39,11 +39,12 @@ int main(void)
 		int valorA;
 		int valorB;
 		int resultadoSumar=0;
+		int resultadoRestar=0;
 
 		do
 		{
 
-			if(utn_getInt (&opcion, "1. Ingrese valor A\n2. Ingrese valor B\n3. Operar valores [+;-;*;/;!]\n4. Resultados de las operaciones\n5. Salir\n", "Opcion no válida", 1, 5, 2)==0)
+			if(utn_getInt (&opcion, "1. Ingrese valor A\n2. Ingrese valor B\n3. Operar valores [+;-;*;/;!]\n4. Resultados de las operaciones\n5. Salir\n", "Opcion no válida\n", 1, 5, 2)==0)
 			{
 				switch (opcion)
 				{
@@ -80,10 +81,19 @@ int main(void)
 					{
 						printf("\nERROR EN LA SUMA");
 					}
+					if(utn_restarInt(&resultadoRestar, valorA, valorB)==0)
+					{
+						printf("Se pudo restar.\n");
+					}
+					else
+					{
+						printf("\nERROR EN LA RESTA");
+					}
 					break;
 				case 4:
 						printf("La suma de A y B es : %d\n", resultadoSumar);
-						scanf("%d", &resultadoSumar);
+						printf("La resta de A y B es: %d\n", resultadoRestar);
+
 					break;
 				}
 			}
