@@ -47,7 +47,7 @@ int utn_multInt (int valorA, int valorB);
  * \return el resultado de la division de los 2 parametros
  *
  */
-int utn_divInt (int valorA, int valorB);
+float utn_divInt (int valorA, int valorB);
 
 
 

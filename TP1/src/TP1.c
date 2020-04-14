@@ -81,7 +81,7 @@ int main(void)
 						printf("\nNo se puede dividir por 0\n");
 					}else
 					{
-					printf("\nLa division de %d y %d es : %.2f\n", valorA, valorB, resultadoDividir);
+					printf("\n\nLa division de %d y %d es : %.2f\n", valorA, valorB, resultadoDividir);
 					}
 
 					break;

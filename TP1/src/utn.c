@@ -137,7 +137,7 @@ float utn_divInt (int valorA, int valorB)
 {
 	float resultadoDividir;
 
-	resultadoDividir = (float)valorA / valorB;
+	resultadoDividir= valorA/(float)valorB;
 
 	return resultadoDividir;
 }
