@@ -38,8 +38,10 @@ int main(void)
 		int opcion;
 		int valorA;
 		int valorB;
-		int resultadoSumar=0;
-		int resultadoRestar=0;
+		int resultadoSumar;
+		int resultadoRestar;
+		int resultadoMultiplicar;
+		float resultadoDividir;
 
 		do
 		{
@@ -49,50 +51,38 @@ int main(void)
 				switch (opcion)
 				{
 				case 1:
-					if(utn_getInt(&valorA, "Elija el valor de A\n","Valor incorrecto.Reintente\n",0,500,2)==0)
-					{
-							printf("\nEl valor de A = %d",valorA);
-							scanf("%d", &valorA);
-					}
-					else
-					{
-							printf("\nERROR");
-					}
+					printf("Ingrese el valor de A\n");
+					scanf("%d", &valorA);
+					printf("El valor de A es: %d\n",valorA);
 					break;
 
 				case 2:
-					if(utn_getInt(&valorB, "Elija el valor de B\n","Valor incorrecto. Reintente\n",0,500,2)==0)
-					{
-							printf("\nEl valor de B = %d",valorB);
-							scanf("%d", &valorB);
-					}
-					else
-					{
-							printf("\nERROR");
-					}
+					printf("Ingrese el valor de B\n");
+					scanf("%d", &valorB);
+					printf("El valor de B es: %d\n",valorB);
 					break;
 
 				case 3:
-					if(utn_sumInt (&resultadoSumar, valorA, valorB)==0)
+					printf("Se realizaron todas las operaciones.\n\n");
+					resultadoSumar=utn_sumInt (valorA,valorB);
+					resultadoRestar=utn_restarInt (valorA,valorB);
+					resultadoMultiplicar=utn_multInt(valorA,valorB);
+					if(valorB!=0)
 					{
-						printf("Se pudo sumar.\n");
-					}
-					else
-					{
-						printf("\nERROR EN LA SUMA");
-					}
-					if(utn_restarInt(&resultadoRestar, valorA, valorB)==0)
-					{
-						printf("Se pudo restar.\n");
-					}
-					else
-					{
-						printf("\nERROR EN LA RESTA");
+					resultadoDividir=utn_divInt(valorA,valorB);
 					}
 					break;
 				case 4:
-						printf("La suma de A y B es : %d\n", resultadoSumar);
-						printf("La resta de A y B es: %d\n", resultadoRestar);
+					printf("\nLa suma de %d y %d es : %d\n", valorA, valorB, resultadoSumar);
+					printf("\nLa resta de %d y %d es: %d\n",valorA, valorB, resultadoRestar);
+					printf("\nLa multiplicacion de %d y %d es : %d\n", valorA, valorB, resultadoMultiplicar);
+					if(valorB==0)
+					{
+						printf("\nNo se puede dividir por 0\n");
+					}else
+					{
+					printf("\nLa division de %d y %d es : %.2f\n", valorA, valorB, resultadoDividir);
+					}
 
 					break;
 				}

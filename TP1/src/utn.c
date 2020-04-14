@@ -106,73 +106,40 @@ char utn_getChar (char* pResultado, char* mensaje, char* mError, char min, char 
 			return retorno;
 }
 
-int utn_sumInt (int* pResultadoSuma, int valorA, int valorB)
+int utn_sumInt (int valorA, int valorB)
 {
 	int resultadoSumar;
-	int retorno = -1;
 
-	if(pResultadoSuma != NULL)
-	{
 		resultadoSumar = valorA + valorB;
-		*pResultadoSuma = resultadoSumar;
-		retorno = 0;
-	}
-			return retorno;
+
+	return resultadoSumar;
 }
 
-int utn_restarInt (int* pResultadoResta, int valorA, int valorB)
+int utn_restarInt (int valorA, int valorB)
 {
 	int resultadoRestar;
-	int retorno = -1;
 
-	if(pResultadoResta != NULL)
-	{
 		resultadoRestar = valorA - valorB;
-		*pResultadoResta = resultadoRestar;
-		retorno = 0;
-	}
-			return retorno;
+
+			return resultadoRestar;
 }
 
-
-
-
-
-
-
-
-
-/*
-
-int utn_promediarArray(float* pPromedioResultado, int array[], int len)
+int utn_multInt (int valorA, int valorB)
 {
+	int resultadoMultiplicar;
 
-	int i;
-	int acumuladorSuma=0;
-	int retorno = -1;
+	resultadoMultiplicar = valorA * valorB;
 
-	if(pPromedioResultado != NULL && array != NULL && len > 0){
-		for (i=0; i<len; i++)
-		{
-			acumuladorSuma = acumuladorSuma + array[i];
-		}
-
-		//printf ("%d", suma);
-
-		*pPromedioResultado = (float)acumuladorSuma/len;
-		retorno = 0;
-		break;
-	}
-
-	return retorno;
+	return resultadoMultiplicar;
 }
 
-int utn_sumar(int* resultadoSuma, int arrayNumeros[])
+float utn_divInt (int valorA, int valorB)
 {
-	int bufferInt;
-	int retorno = -1;
+	float resultadoDividir;
 
+	resultadoDividir = (float)valorA / valorB;
 
-
+	return resultadoDividir;
 }
-*/
+
+
