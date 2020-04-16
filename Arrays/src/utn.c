@@ -142,4 +142,18 @@ float utn_divInt (int valorA, int valorB)
 	return resultadoDividir;
 }
 
+int printArray(int pArray[], int tam)
+{
+	int i;
+	int retorno= -1;
+	if(pArray != NULL && tam > 0)
+	{
+		retorno = 0;
+		for(i=0;i<tam, i++)
+		{
+			printf("[DEBUG] Indice: %d - Valor - %d", i, pArray[i]);
+		}
+	}
+	return retorno;
+}
 

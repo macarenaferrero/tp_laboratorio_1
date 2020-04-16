@@ -42,6 +42,8 @@ int main(void)
 		int resultadoRestar;
 		int resultadoMultiplicar;
 		float resultadoDividir;
+		int resultadoFactorialA;
+		int resultadoFactorialB;
 
 		do
 		{
@@ -71,19 +73,22 @@ int main(void)
 					{
 					resultadoDividir=utn_divInt(valorA,valorB);
 					}
+					resultadoFactorialA=utn_factorial(valorA);
+					resultadoFactorialB=utn_factorial(valorB);
 					break;
 				case 4:
 					printf("\nLa suma de %d y %d es : %d\n", valorA, valorB, resultadoSumar);
 					printf("\nLa resta de %d y %d es: %d\n",valorA, valorB, resultadoRestar);
-					printf("\nLa multiplicacion de %d y %d es : %d\n", valorA, valorB, resultadoMultiplicar);
+					printf("\nLa multiplicacion de %d y %d es : %d", valorA, valorB, resultadoMultiplicar);
 					if(valorB==0)
 					{
-						printf("\nNo se puede dividir por 0\n");
+						printf("\nNo se puede dividir por 0\n\n");
 					}else
 					{
 					printf("\n\nLa division de %d y %d es : %.2f\n", valorA, valorB, resultadoDividir);
 					}
-
+					printf("\nEl factorial de %d es %d\n", valorA, resultadoFactorialA);
+					printf("\nEl factorial de %d es %d\n\n", valorB, resultadoFactorialB);
 					break;
 				}
 			}

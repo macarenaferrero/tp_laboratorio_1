@@ -51,7 +51,7 @@ float utn_divInt (int valorA, int valorB);
 
 
 
-
+int printArray(int pArray[], int tam);
 
 
 #endif /* UTN_H_ */
