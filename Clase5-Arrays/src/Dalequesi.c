@@ -53,20 +53,4 @@ int main(void)
 
 	return EXIT_SUCCESS;
 }
-/*
-// pasaje por referencia // imprimirArray(&edad);
-void imprimirArray(int* e)
-{
-	int j;
-	*e = 9; // leo o escribo el valor
-}
-// pasaje por valor // imprimirArray(edad);
- *
-void imprimirArray(int e)
-{
-	int j;
-	 // no puedo escribir la variable de afuera
-	j = e + 7; // leo el valor
-}
 
-*/

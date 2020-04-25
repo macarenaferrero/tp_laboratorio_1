@@ -25,11 +25,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-<<<<<<< HEAD
 #include "utn.h"
-=======
 #include "funciones.h"
->>>>>>> 3d3680727b04bc0a3e3c2ffe17063babc1ad1a2c
+
 
 int main(void){
 
