@@ -1,15 +1,14 @@
 /*
-Ejercicio 4.
-Tomar el ejercicio 3 y realizar una funcion que reciba el
-array, un indice, y le permita al usuario cargar los datos
- en el item de la posicion especificada por el indice.
+Ejercicio 6.
+Tomar la biblioteca producto del ej5  y realizar un programa
+con un menu de dos opciones:
 
+    a) Cargar un producto
+    b) Imprimir lista productos
 
-Ejercicio 5.
-Tomar el ej 4 y agregar a la biblioteca producto funcion que
-me devuelva el indice de un item vacio (sin cargar) o -1
-en caso de error o de que no haya mas lugar.
-Esta funcion debe recibir el array y su longitud:
+Se debera utilizar la funcion que devuelve una posicion vacia
+para indicar en que posicion del array se guardaran los datos
+ingresados.
 
  */
 
@@ -25,26 +24,53 @@ Esta funcion debe recibir el array y su longitud:
 int main(void) {
 
 	Producto productos[PROD_LEN];
+	int respuesta;
+	int indice;
 	int i;
+	char valor;
 
-		if(prod_initArray(productos,PROD_LEN) == 0)
+		if(!prod_initArray(productos, PROD_LEN))
 		{
-			printf("Array INIT ok\n");
+			printf("Inicializacion ok\n");
 		}
 
-		if(prod_updateArray(productos,PROD_LEN,2) == 0)
+		respuesta=utn_getChar(&valor, "Ingrese", "Error", 'a', 'z', 2);
+		printf("La funcion salió: %d y la letra es: %c", respuesta, valor);
+/*
+do
+{
+		if(!utn_getNumero(&respuesta, "1) Cargar un producto\n2) Imprimir lista productos\n3) Salir\n", "Opcion incorrecta", 1, 3, 2))
 		{
-			prod_imprimir(&productos[2]);
-		}
+			switch(respuesta)
+			{
+				case 1:
+					if(prod_getEmptyIndex(productos, PROD_LEN, &indice)==0)
+					{
+					printf("Se cargará en el espacio: %d",indice);
+					}
+					if(prod_updateArray(productos, PROD_LEN, indice)==0)
+					{
+						printf("Se cargó correctamente\n");
+					}
+					break;
+				case 2:
+					for(i=0;i<PROD_LEN;i++)
+					{
+						if(productos[i].isEmpty == 0)
+						{
+						prod_imprimir(&productos[i]);
+						}
 
-		if(prod_getEmptyIndex(productos, PROD_LEN)>0)
-		{
-			i =prod_getEmptyIndex(productos, PROD_LEN);
-			printf("El indice vacio es: %d\n", i);
-		}else
-		{
-			printf("Error. No hay espacio disponible\n");
-		}
+					}
+					break;
 
+
+			}
+		}
+}while(respuesta != 3);
+*/
 		return EXIT_SUCCESS;
 }
+
+
+

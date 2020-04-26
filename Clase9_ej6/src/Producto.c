@@ -68,7 +68,12 @@ int prod_updateArray(Producto* arrayProductos,int limite, int indice)
 			utn_getNumeroFlotante(&auxProducto.precio,"\nPrecio?","\nPrecio es invalido",0.01,1000000,2) == 0)
 		{
 			respuesta = 0;
-			arrayProductos[indice] = auxProducto;
+
+			strncpy(arrayProductos[indice].nombre,auxProducto.nombre,NOMBRE_LEN);
+			strncpy(arrayProductos[indice].descripcion,auxProducto.descripcion,NOMBRE_LEN);
+			arrayProductos[indice].precio = auxProducto.precio;
+			arrayProductos[indice].isEmpty = 0;
+
 		}
 	}
 	return respuesta;
@@ -82,7 +87,7 @@ int prod_updateArray(Producto* arrayProductos,int limite, int indice)
  *
  */
 
-int prod_getEmptyIndex(Producto lista[], int len)
+int prod_getEmptyIndex(Producto lista[], int len, int* pIndice)
 {
 	int retorno=-1;
 	int i;
@@ -94,7 +99,9 @@ int prod_getEmptyIndex(Producto lista[], int len)
 		{
 			if(lista[i].isEmpty == 1)
 			{
-				retorno = i;
+				retorno = 0;
+				*pIndice = i;
+				break;
 			}
 		}
 	}

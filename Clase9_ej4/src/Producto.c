@@ -78,11 +78,12 @@ int prod_updateArray(Producto* arrayProductos,int limite, int indice)
  * \briefIndica posiciones libres
  * \param lista[] Array de la lista a evaluar
  * \param len Limite del array de la lista
- * \return Retorna el INDICE del casillero vacio y -1 (ERROR)
+ * \para *indice Puntero donde se guarda el indice vacio
+ * \return Retorna 0 (OK) y -1 (ERROR)
  *
  */
 
-int prod_getEmptyIndex(Producto lista[], int len)
+int prod_getEmptyIndex(Producto lista[], int len, int* pIndice)
 {
 	int retorno=-1;
 	int i;
@@ -94,7 +95,9 @@ int prod_getEmptyIndex(Producto lista[], int len)
 		{
 			if(lista[i].isEmpty == 1)
 			{
-				retorno = i;
+				retorno =0;
+				*indice =i;
+				break;
 			}
 		}
 	}

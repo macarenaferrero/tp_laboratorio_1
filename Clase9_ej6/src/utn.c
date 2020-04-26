@@ -12,6 +12,7 @@ static int esNombre(char* cadena,int longitud);
 static int getNombre(char* pResultado,int longitud);
 static int esDescripcion(char* cadena,int longitud);
 static int getDescripcion(char* pResultado, int longitud);
+static int getChar(char* pValor);
 
 
 /**
@@ -380,3 +381,57 @@ int utn_getDescripcion(char* pResultado, int longitud,char* mensaje, char* mensa
 	}
 	return retorno;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+int utn_getChar(char* pValor, char* mensaje, char* mensajeError, char minimo, char maximo, int reintentos)
+{
+	int retorno = -1;
+	char bufferChar;
+	do
+	{
+		printf("%s",mensaje);
+		if(	getChar(&bufferChar) == 0 &&
+				bufferChar >= minimo &&
+				bufferChar <= maximo)
+		{
+			retorno = 0;
+			*pValor = bufferChar;
+			break;
+		}
+		printf("%s",mensajeError);
+		reintentos--;
+	}while(reintentos>=0);
+
+	return retorno;
+}
+
+/**
+ * \brief Obtine una letra
+ * \param pValor Puntero al espacio de memoria donde se dejara el resultado de la funcion
+ * \return Retorna 0 (EXITO) si se obtiene un numero entero y -1 (ERROR) si no
+ *
+ */
+static int getChar(char* pValor)
+{
+    int retorno=-1;
+    char bufferChar[2];
+    if(	pValor != NULL && getString(bufferChar, 2)==0)
+	{
+		retorno=0;
+		strncpy(pValor,bufferChar, 2);
+
+	}
+    return retorno;
+}
+
+

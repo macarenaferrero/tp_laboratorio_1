@@ -22,6 +22,6 @@ typedef struct
 int prod_imprimir(Producto* auxProducto);
 int prod_initArray(Producto* arrayProductos,int limite);
 int prod_updateArray(Producto* arrayProductos,int limite, int indice);
-int prod_getEmptyIndex(Producto lista[], int len);
+int prod_getEmptyIndex(Producto lista[], int len, int* pIndice);
 
 #endif /* PRODUCTO_H_ */
